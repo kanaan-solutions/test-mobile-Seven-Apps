@@ -14,7 +14,7 @@ export const InputText = styled.TextInput.attrs({
 	font-size: 20px;
 	font-weight: bold;
 	color:#ccc;
-	margin-right: 90px;
+	margin-right: 80px;
 	margin-top: 3px;
 `;
 

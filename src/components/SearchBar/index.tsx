@@ -2,7 +2,12 @@ import React from 'react';
 
 import { Container, InputText, Label } from './styles';
 
-export const SearchBar: React.FC = () => {
+interface ISearchBar {
+  onChangeText: (text:string) => void;
+  value: string | undefined;
+}
+
+export const SearchBar: React.FC<ISearchBar> = ({ onChangeText, value }) => {
   return (
     <Container 
       style={{
@@ -14,7 +19,9 @@ export const SearchBar: React.FC = () => {
         Busque por artistas, álbums ou músicas 
       </Label>
       <InputText 
-        placeholder='Comece a escrever...'
+        value={value}
+        placeholder='Comece a escrever....'
+        onChangeText={onChangeText}
       />
     </Container>
   );
