@@ -1,14 +1,14 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Playlist from '../pages/Playlist';
+import HomePage from '../pages/HomePage';
 
 const AppStack = createStackNavigator();
 
 const Routes: React.FC = () => {
     return(
         <AppStack.Navigator screenOptions={{ headerShown: false }}>
-            <AppStack.Screen name="Playlist" component={Playlist} />
+            <AppStack.Screen name="HomePage" component={HomePage} />
         </AppStack.Navigator>
     )
 }

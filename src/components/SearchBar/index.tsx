@@ -1,14 +1,15 @@
-import { ReactNode } from 'react';
+import React from 'react';
 
 import { Container, InputText, Label } from './styles';
 
-interface SearchBarProps {
-  children: ReactNode;
-}
-
-function SearchBar() {
+export const SearchBar: React.FC = () => {
   return (
-    <Container>
+    <Container 
+      style={{
+        "borderBottomColor": "#c3c3c3",
+        "borderBottomWidth": 1,
+      }}
+    >
       <Label>
         Busque por artistas, álbums ou músicas 
       </Label>
@@ -18,5 +19,3 @@ function SearchBar() {
     </Container>
   );
 };
-
-export default SearchBar;
