@@ -3,15 +3,14 @@ import React, { useState } from 'react';
 import AlbumList from '../../components/AlbumList';
 import { SearchBar } from '../../components/SearchBar';
 
-import { Container, SpotifyIcon } from './styles'
+import { Container } from './styles'
 
-export const HomePage: React.FC = () => {
+const HomePage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <>
       <Container>
-        <SpotifyIcon name="spotify" size={65} color="white" /> 
         <SearchBar
           value={searchTerm}
           onChangeText={(text) => setSearchTerm(text)}

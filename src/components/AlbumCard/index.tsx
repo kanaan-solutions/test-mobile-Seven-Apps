@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { Container, Image, Title, Description } from './styles';
 
-function AlbumItem() {
+function AlbumCard() {
   return (
     <Container>
       <Image />
@@ -12,4 +12,4 @@ function AlbumItem() {
   );
 };
 
-export default AlbumItem;
+export default AlbumCard;
