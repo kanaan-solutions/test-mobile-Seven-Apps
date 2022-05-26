@@ -1,7 +1,13 @@
-import axios from 'axios';
+export const BASE_URL = `https://api.spotify.com/v1`;
 
-const api = axios.create({
-    baseURL: 'https://developer.spotify.com/documentation/web-api/quick-start/',
-})
-
-export default api;
+export const apiEndpoints = {
+  getUserPlaylist: (userId: string) => {
+    return `/users/${userId}/playlists`;
+  },
+  getCategories: () => {
+    return `/browse/categories`;
+  },
+  getNewRelease: () => {
+    return `/browse/new-releases?country=IN`;
+  },
+};
