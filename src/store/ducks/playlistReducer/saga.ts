@@ -1,41 +1,15 @@
 import { call, put } from 'redux-saga/effects';
-import { ResponseType, useAuthRequest } from "expo-auth-session";
-import { ClientId, ClientSecret } from "../../../utils/spotifyCredentials";
-import { tokenEndpoint, authorizationEndpoint } from '../../../services/api';
 
 import { playlistLoadSuccess, playlistLoadFailure } from './actions';
+import api from "../../../services/api"
 
 export function* playlistLoad(): any {
   try {
-    const discovery = {
-      tokenEndpoint,
-      authorizationEndpoint
-    };
-  
-    const [request, response, promptAsync] = useAuthRequest(
-      {
-        responseType: ResponseType.Token,
-        clientId: ClientId,
-        clientSecret: ClientSecret,
-        scopes: [
-          "user-read-currently-playing",
-          "user-read-recently-played",
-          "user-read-playback-state",
-          "user-top-read",
-          "user-modify-playback-state",
-          "streaming",
-          "user-read-email",
-          "user-read-private",
-        ],
-        usePKCE: false,
-        redirectUri: "exp://192.168.138.101:19000",
-      },
-      discovery
-    );
+    const request = yield call(api.get, '/playlists/3cEYpjA9oz9GiPac4AsH4n');
 
-    const results = {request, response, promptAsync}
+    console.log(request);
     
-    yield put(playlistLoadSuccess(["oi"]));
+    yield put(playlistLoadSuccess(request));
   } catch (err) {
     yield put(playlistLoadFailure());
   }

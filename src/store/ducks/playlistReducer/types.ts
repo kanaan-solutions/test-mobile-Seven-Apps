@@ -25,9 +25,7 @@ export type PlaylistAction =
 
 // Data Types
 export interface PlaylistReturns {
-  request:  AuthRequest | null;  
-  response: AuthSessionResult | null;
-  promptAsync: (options?: AuthRequestPromptOptions | undefined) => Promise<AuthSessionResult> 
+  name: string;
 }
 
 // State Type
