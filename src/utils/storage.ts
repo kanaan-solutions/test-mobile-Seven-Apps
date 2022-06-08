@@ -3,7 +3,6 @@ export const storeData = async (name:string,data: string) => {
     try {
       await AsyncStorage.setItem(name, data);
     } catch (e) {
-      // saving error
       console.log("Error", e);
     }
   };

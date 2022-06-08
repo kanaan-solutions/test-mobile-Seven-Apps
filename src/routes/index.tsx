@@ -12,7 +12,7 @@ const Routes: React.FC = () => {
         <AppStack.Navigator screenOptions={{ headerShown: false }}>
             <AppStack.Screen name="Login" component={Login} />
             <AppStack.Screen name="HomePage" component={HomePage} />
-            <AppStack.Screen name="TrackList" component={TrackList} />
+            {/* <AppStack.Screen name="TrackList" component={TrackList} /> */}
         </AppStack.Navigator>
     )
 }

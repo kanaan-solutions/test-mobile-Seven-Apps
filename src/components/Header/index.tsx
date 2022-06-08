@@ -1,9 +1,9 @@
-import React, { Component, ReactNode } from 'react';
+import React from 'react';
 import { Box,Text, theme } from '../../utils/theme';
-import * as Icon from '@expo/vector-icons/Feather';
+import Icon from '@expo/vector-icons/Feather';
 
 
-const Header = ({title , iconName}: {title:string, iconName?:string }) => {
+const Header = ({title , iconName}: {title:string, iconName?: any }) => {
     return (
       <Box >
         <Box marginHorizontal="m" height={60} flexDirection="row" alignItems="center" justifyContent="space-between" >

@@ -1,13 +1,3 @@
-export const BASE_URL = `https://api.spotify.com/v1`;
-
-export const apiEndpoints = {
-  getUserPlaylist: (userId: string) => {
-    return `/users/${userId}/playlists`;
-  },
-  getCategories: () => {
-    return `/browse/categories`;
-  },
-  getNewRelease: () => {
-    return `/browse/new-releases?country=IN`;
-  },
-};
+export const BASE_URL = 'https://api.spotify.com/v1';
+export const authorizationEndpoint =  "https://accounts.spotify.com/authorize";
+export const tokenEndpoint = "https://accounts.spotify.com/api/token";

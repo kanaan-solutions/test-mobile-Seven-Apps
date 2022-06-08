@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
 import { ResponseType, useAuthRequest } from "expo-auth-session";
 
-// @ts-ignore
 import { ClientId, ClientSecret } from "../../utils/spotifyCredentials";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { storeData } from "../../utils/storage";
 import { useNavigation } from "@react-navigation/native";
-
-// import { useDispatch } from "react-redux";
-// import { getCurrentUser } from "../redux/slices/user";
 
 import { 
   Container,
@@ -19,7 +14,6 @@ import {
 
 const Login = () => {
   const { navigate } = useNavigation();
-  // const dispatch = useDispatch();
   const discovery = {
     authorizationEndpoint: "https://accounts.spotify.com/authorize",
     tokenEndpoint: "https://accounts.spotify.com/api/token",
@@ -50,7 +44,6 @@ const Login = () => {
     if (response?.type === "success") {
       const { access_token } = response.params;
       storeData("@access_token", access_token);
-      // dispatch(getCurrentUser());
       navigate("HomePage");
     }
   }, [response]);
