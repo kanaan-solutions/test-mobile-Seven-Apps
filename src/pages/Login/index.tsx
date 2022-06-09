@@ -25,14 +25,9 @@ const Login = () => {
       clientId: ClientId,
       clientSecret: ClientSecret,
       scopes: [
-        "user-read-currently-playing",
-        "user-read-recently-played",
-        "user-read-playback-state",
-        "user-top-read",
-        "user-modify-playback-state",
-        "streaming",
-        "user-read-email",
-        "user-read-private",
+        "playlist-modify-public",
+        "playlist-modify-private",
+        "playlist-read-private",
       ],
       usePKCE: false,
       redirectUri: "exp://192.168.138.101:19000",
@@ -43,7 +38,7 @@ const Login = () => {
   useEffect(() => {
     if (response?.type === "success") {
       const { access_token } = response.params;
-      storeData("@access_token", access_token);
+      const token = storeData("@access_token", access_token);
       navigate("HomePage");
     }
   }, [response]);

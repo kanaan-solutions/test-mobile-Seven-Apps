@@ -7,6 +7,8 @@ export const PLAYLIST_LOAD_FAILURE = 'PLAYLIST_LOAD_FAILURE';
 
 export interface playlistLoadRequestAction {
   type: typeof PLAYLIST_LOAD_REQUEST;
+  id: string;
+  token: string;
 }
 
 interface playlistLoadSuccessAction {
@@ -24,13 +26,17 @@ export type PlaylistAction =
           playlistLoadFailuretAction;
 
 // Data Types
-export interface PlaylistReturns {
+export interface IPlaylistReturns {
   name: string;
+}
+
+export interface IPlaylistData {
+  data: {IPlaylistReturns}
 }
 
 // State Type
 export interface PlaylistState {
-  data: PlaylistReturns;
+  data: IPlaylistData;
   loading: boolean;
   error: boolean;
 }
