@@ -7,7 +7,7 @@ import {
     PLAYLIST_LOAD_SUCCESS } from './types';
 
 const INITIAL_STATE: PlaylistState = {
-  data: [],
+  data: {},
   error: false,
   loading: false,
 };

@@ -13,7 +13,7 @@ export interface playlistLoadRequestAction {
 
 interface playlistLoadSuccessAction {
   type: typeof PLAYLIST_LOAD_SUCCESS;
-  payload: [];
+  payload: {};
 }
 
 interface playlistLoadFailuretAction {
@@ -25,13 +25,58 @@ export type PlaylistAction =
           playlistLoadSuccessAction | 
           playlistLoadFailuretAction;
 
+interface IArtists {
+  href: string;
+  id: string;
+  name:  string;
+  uri: string;
+}
+
+interface IImages {
+  height: number | null;
+  url: string;
+  width: number | null;
+}
+
+interface ITrack {
+  artists: IArtists[];
+  images: IImages[];
+}
+
+interface ITracks {
+  track: ITrack
+}
+
+interface IOwmer {
+  display_name: string;
+  external_urls: {
+    sportify: string;
+  }
+  href: string;
+  id: string;
+  type: string;
+  uri: string;
+}
+
+interface IFollowers {
+  herf: string | null;
+  total: number;
+}
+
 // Data Types
 export interface IPlaylistReturns {
+  description: string;
+  followers: IFollowers;
+  images: IImages[];
   name: string;
+  tracks: {
+    items: ITracks[]
+  };
+  owner: IOwmer;
 }
 
 export interface IPlaylistData {
-  data: {IPlaylistReturns}
+  data: IPlaylistReturns
 }
 
 // State Type

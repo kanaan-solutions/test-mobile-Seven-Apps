@@ -18,8 +18,7 @@ const HomePage: React.FC<StateProps> = () => {
   const [token, setToken] = useState<string | unknown>("");
 
   const playlist = useSelector((state: ApplicationState) => 
-    state.playlist.data
-    // Ajeitar as interface do data, pois é state.platlist.data.data
+    state.playlist.data.data
   );
 
   const dispatch = useDispatch();
